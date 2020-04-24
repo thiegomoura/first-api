@@ -4,21 +4,19 @@ const mongoose = require("mongoose");
 const requireDir = require("require-dir");
 
 //iniciando o App
-const app = express();
-app.use(express.json());
-app.use(cors());
+const server = async() => {
+  const app = express();
+  app.use(express.json());
+  app.use(cors());
+
 
 //iniciando o DB
 //mongoose.connect('mongodb://localhost:27017/nodeapi', {useNewUrlParser: true, useUnifiedTopology: true});
-
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://thiego:14dms%23Afz@storage-zr8pm.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true});
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+try {
+  await mongoose.connect('mongodb://thiego:node123456@storage-shard-00-00-zr8pm.mongodb.net:27017,storage-shard-00-01-zr8pm.mongodb.net:27017,storage-shard-00-02-zr8pm.mongodb.net:27017/test?ssl=true&replicaSet=Storage-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+} catch (err) {
+  console.log('Error ao conectar',err)
+}
 
 requireDir ('./src/models');
 
@@ -28,3 +26,7 @@ requireDir ('./src/models');
 app.use("/api", require("./src/routes"));
 
 app.listen(3001);
+
+}
+
+server();
