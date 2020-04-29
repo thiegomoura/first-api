@@ -16,7 +16,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "dev": "nodemon server.js",
+    "server": "nodemon server.js",
     "build": "webpack --mode=production",
     "start": "node server.js"
   },
