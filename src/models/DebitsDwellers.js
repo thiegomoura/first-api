@@ -1,21 +1,30 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate');
 
-const RoomSchema = new mongoose.Schema({
+const DebitDwellerSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true,
     },
     value: {
         type: Schema.Types.Decimal128,
+        required: true,
     },
-    situation: {
+    ratio: {
         type: Boolean,
         required: true,
     },
-    dweller: {
+    default: {
+        type: Boolean,
+        required: true,
+    },
+    dweller: [{
         _objectid: Schema.Types.ObjectId,
         name: String,
+    }],
+    category: {
+        _objectid: Schema.Types.ObjectId,
+        description: String,
     },
     createAt: {
         type: Date,
@@ -23,6 +32,6 @@ const RoomSchema = new mongoose.Schema({
     }
 });
 
-RoomSchema.plugin(mongoosePaginate);
+DebitDwellerSchema.plugin(mongoosePaginate);
 
-mongoose.model('Room', RoomSchema);
+mongoose.model('DebitDweller', DebitDwellerSchema);

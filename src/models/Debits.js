@@ -6,34 +6,40 @@ const DebitSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    category: {
-        type: Intl,
-        required: true,
-    },
     value: {
-        type: Number,
+        type: Schema.Types.Decimal128,
         required: true,
     },
     situation: {
         type: Boolean,
         required: true,
     },
-    reference: {
-        type: Date,
-    },
-    dueDate: {
-        type: Date,
-    },
-    dwellers: [{
-        id: Number,
-        name: String,
-    }],
     default: {
         type: Boolean,
         required: true,
     },
     observation: {
         type: String,
+    },
+    monthReference: {
+        type: Date,
+        required: true,
+    },
+    dueDate: {
+        type: Date,
+    },
+    origin: {
+        _objectid: Schema.Types.ObjectId,
+        description: String,
+        value: Schema.Types.Decimal128,
+    },
+    category: {
+        _objectid: Schema.Types.ObjectId,
+        description: String,
+    },
+    dweller: {
+        _objectid: Schema.Types.ObjectId,
+        name: String,
     },
     createAt: {
         type: Date,

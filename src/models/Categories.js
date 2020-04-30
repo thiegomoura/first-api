@@ -1,16 +1,9 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate');
 
-const RoomSchema = new mongoose.Schema({
+const CategorySchema = new mongoose.Schema({
     description: {
         type: String,
-        required: true,
-    },
-    value: {
-        type: Schema.Types.Decimal128,
-    },
-    situation: {
-        type: Boolean,
         required: true,
     },
     dweller: {
@@ -23,6 +16,6 @@ const RoomSchema = new mongoose.Schema({
     }
 });
 
-RoomSchema.plugin(mongoosePaginate);
+CategorySchema.plugin(mongoosePaginate);
 
-mongoose.model('Room', RoomSchema);
+mongoose.model('Category', CategorySchema);

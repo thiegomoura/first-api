@@ -6,9 +6,31 @@ const DwellerSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    nested: {
+        firstName: {type: String},
+        lastName: {type: String}
+    },
+    email: {
+        type: String
+    },
+    cpf: {
+        type: String
+    },
+    telephone: {
+        type: Intl
+    },
+    photoURL: {
+        type: String
+    },
+    debit: [{
+        _objectid: Schema.Types.ObjectId,
+        monthRef: Date,
+        description: String,
+        value: Schema.Types.Decimal128,
+    }],
     room: {
-        type: Intl,
-        required: true,
+        _objectid: Schema.Types.ObjectId,
+        description:  String,
     },
     createAt: {
         type: Date,
