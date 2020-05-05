@@ -7,7 +7,7 @@ const DebitDwellerSchema = new mongoose.Schema({
         required: true,
     },
     value: {
-        type: Schema.Types.Decimal128,
+        type: mongoose.Decimal128,
         required: true,
     },
     ratio: {
@@ -19,11 +19,11 @@ const DebitDwellerSchema = new mongoose.Schema({
         required: true,
     },
     dweller: [{
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         name: String,
     }],
     category: {
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         description: String,
     },
     createAt: {

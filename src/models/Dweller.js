@@ -23,13 +23,13 @@ const DwellerSchema = new mongoose.Schema({
         type: String
     },
     debit: [{
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         monthRef: Date,
         description: String,
-        value: Schema.Types.Decimal128,
+        value: mongoose.Decimal128,
     }],
     room: {
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         description:  String,
     },
     createAt: {

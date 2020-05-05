@@ -7,7 +7,7 @@ const DebitSchema = new mongoose.Schema({
         required: true,
     },
     value: {
-        type: Schema.Types.Decimal128,
+        type: mongoose.Decimal128,
         required: true,
     },
     situation: {
@@ -29,16 +29,16 @@ const DebitSchema = new mongoose.Schema({
         type: Date,
     },
     origin: {
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         description: String,
-        value: Schema.Types.Decimal128,
+        valueOrigim: mongoose.Decimal128,
     },
     category: {
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         description: String,
     },
     dweller: {
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         name: String,
     },
     createAt: {

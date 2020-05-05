@@ -7,14 +7,14 @@ const RoomSchema = new mongoose.Schema({
         required: true,
     },
     value: {
-        type: Schema.Types.Decimal128,
+        type: mongoose.Decimal128,
     },
     situation: {
         type: Boolean,
         required: true,
     },
     dweller: {
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         name: String,
     },
     createAt: {

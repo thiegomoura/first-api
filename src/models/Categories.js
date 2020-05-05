@@ -7,7 +7,7 @@ const CategorySchema = new mongoose.Schema({
         required: true,
     },
     dweller: {
-        _objectid: Schema.Types.ObjectId,
+        _objectid: String,
         name: String,
     },
     createAt: {

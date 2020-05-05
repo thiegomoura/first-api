@@ -25,7 +25,6 @@ const Debit = mongoose.model('Debit')
 
 //rotas
 app.use("/api", require("./src/routes"));
-
 app.listen(3001);
 
 }
