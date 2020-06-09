@@ -26,6 +26,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.10",
     "mongoose-paginate": "^5.0.3",
+    "onsenui": "^2.10.10",
+    "react-onsenui": "^1.11.2",
     "require-dir": "^1.2.0"
   },
   "keywords": [],
